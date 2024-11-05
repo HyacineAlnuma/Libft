@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:57:02 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:03:37 by halnuma          ###   ########.fr       */
+/*   Created: 2024/11/05 15:47:27 by halnuma           #+#    #+#             */
+/*   Updated: 2024/11/05 17:16:05 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c < '!' || c > '~')
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && i < n)
 	{
-		return (0);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	return (1);
+	if (i < n)
+		return (s1[i] - s2[i]);
+	return (0);
 }
+
+// int	main(void)
+// {
+// 	char	*s1 = "123";
+// 	char	*s2 = "124";
+// 	int	res;
+
+// 	res = ft_strncmp(s1, s2, 2);
+// 	printf("%d", res);
+// }

@@ -6,11 +6,11 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:23:32 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 14:29:30 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/05 17:15:37 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*memmove(void *dest, const void *src, size_t n)
 {

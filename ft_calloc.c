@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:57:02 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:03:37 by halnuma          ###   ########.fr       */
+/*   Created: 2024/11/05 16:43:18 by halnuma           #+#    #+#             */
+/*   Updated: 2024/11/05 17:14:46 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+void	*calloc(size_t nmemb, size_t size)
 {
-	if (c < '!' || c > '~')
-	{
-		return (0);
-	}
-	return (1);
+	void	*res;
+	int		bytes_nb;
+
+	bytes_nb = nmemb * size;
+	res = malloc(bytes_nb);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, bytes_nb);
+	return (res);
 }

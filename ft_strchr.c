@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:57:02 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:03:37 by halnuma          ###   ########.fr       */
+/*   Created: 2024/11/05 15:35:26 by halnuma           #+#    #+#             */
+/*   Updated: 2024/11/05 17:15:44 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+char	*strchr(const char *s, int c)
 {
-	if (c < '!' || c > '~')
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		return (0);
+		if (s[i] == c)
+			return (&s[i]);
+		i++;
 	}
-	return (1);
+	return (NULL);
 }

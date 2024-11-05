@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:57:02 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:03:37 by halnuma          ###   ########.fr       */
+/*   Created: 2024/11/05 16:19:01 by halnuma           #+#    #+#             */
+/*   Updated: 2024/11/05 17:16:08 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+char	*strnstr(const char *big, const char *little, size_t len)
 {
-	if (c < '!' || c > '~')
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (!little)
+		return (big);
+	while (big[i] && i < len)
 	{
-		return (0);
+		j = 0;
+		while (big[i + j] == little[j] && (i + j) < len)
+			j++;
+		if (little[j] == '\0')
+			return (&big[i]);
+		i++;
 	}
-	return (1);
+	return (NULL);
 }

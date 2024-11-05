@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:57:02 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:03:37 by halnuma          ###   ########.fr       */
+/*   Created: 2024/11/05 16:28:07 by halnuma           #+#    #+#             */
+/*   Updated: 2024/11/05 17:14:37 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+int	atoi(const char *nptr)
 {
-	if (c < '!' || c > '~')
+	int	i;
+	int	sign;
+	int	result;
+
+	sign = 1;
+	i = 0;
+	if (nptr[i] == '-')
 	{
-		return (0);
+		sign *= -1;
+		i++;
 	}
-	return (1);
+	while (isdigit(nptr[i]))
+	{
+		result = result * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
