@@ -6,11 +6,11 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:30:03 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 15:31:40 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:35:42 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	c -= 32;
 	return (c);

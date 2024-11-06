@@ -6,13 +6,13 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:28:07 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:14:37 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:34:41 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	sign;
@@ -25,7 +25,7 @@ int	atoi(const char *nptr)
 		sign *= -1;
 		i++;
 	}
-	while (isdigit(nptr[i]))
+	while (ft_isdigit(nptr[i]))
 	{
 		result = result * 10 + (nptr[i] - '0');
 		i++;

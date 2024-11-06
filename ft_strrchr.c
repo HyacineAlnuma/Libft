@@ -6,13 +6,13 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:45:07 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:16:12 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:35:35 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 

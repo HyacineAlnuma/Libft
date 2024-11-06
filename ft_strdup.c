@@ -6,13 +6,13 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:38:42 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:15:50 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:35:22 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	int		i;
 	int		s_len;

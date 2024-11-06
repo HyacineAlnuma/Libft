@@ -6,13 +6,13 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:43:18 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:14:46 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:34:51 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
 	int		bytes_nb;

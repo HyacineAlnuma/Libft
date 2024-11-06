@@ -6,11 +6,11 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:14:23 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:15:15 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:35:05 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
 
