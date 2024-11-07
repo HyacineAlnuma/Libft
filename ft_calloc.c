@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:43:18 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/07 13:23:18 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 16:31:50 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
-	int		bytes_nb;
+	size_t	bytes_nb;
 
 	bytes_nb = nmemb * size;
 	if (nmemb > SIZE_MAX / size)

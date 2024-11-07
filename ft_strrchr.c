@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:45:07 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/07 13:34:32 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 14:59:50 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s) - 1;
+	if (c == '\0')
+		return ((char *)&(s[ft_strlen(s)]));
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)

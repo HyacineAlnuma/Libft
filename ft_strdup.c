@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:38:42 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/07 13:32:45 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 16:30:30 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	char	*res;
 
 	s_len = ft_strlen(s);
-	res = malloc(sizeof(char) * s_len);
+	res = malloc(sizeof(char) * s_len + 1);
 	if (!res)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:28:07 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/06 15:34:41 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 16:54:19 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	i = 0;
-	if (nptr[i] == '-')
+	result = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		sign *= -1;
+		if (nptr[i] == '-')
+			sign *= -1;
 		i++;
 	}
 	while (ft_isdigit(nptr[i]))

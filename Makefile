@@ -26,8 +26,6 @@ SRC = ft_atoi.c \
 
 OBJ = $(SRC:.c=.o)
 
-INC = libft.h
-
 CFLAGS = -Wall -Wextra -Werror
 
 all: libft.a
@@ -55,7 +53,7 @@ all: libft.a
 %.o : %.c
 	gcc $(CFLAGS) -c $< -o $@
 
-libft.a: $(OBJ)
+$(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
 clean: 
