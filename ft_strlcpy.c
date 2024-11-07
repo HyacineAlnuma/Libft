@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:21:44 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 17:15:57 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:43:55 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (size == 0)
 		return (src_len);
-	while (i < (size - 1))
+	while (src[i] && i < (size - 1))
 	{
 		dst[i] = src[i];
 		i++;

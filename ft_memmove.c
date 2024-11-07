@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:23:32 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/06 15:35:13 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:27:10 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	int	i;
 
 	if (dest < src)
 	{
-		memcpy(dest, src, n);
+		ft_memcpy(dest, src, n);
 	}
 	else
 	{

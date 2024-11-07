@@ -6,9 +6,11 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:14:23 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/06 15:35:05 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:16:04 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

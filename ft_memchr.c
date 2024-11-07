@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:00:52 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/06 15:38:59 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:15:44 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (*(unsigned char *)(s + i) == (unsigned char)c)
-			return (*(s + i));
+			return ((unsigned char *)(s + i));
 		i++;
 	}
 	return (NULL);

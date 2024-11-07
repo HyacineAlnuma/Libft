@@ -6,13 +6,15 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:03:23 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/05 14:21:25 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:27:45 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
