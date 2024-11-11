@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:57:23 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/11 13:27:00 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/11 17:02:52 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	get_malloc_size(int n)
 
 	div = n;
 	size = 0;
-	if (n < 0)
+	if (n <= 0)
 	{
 		size++;
 		div *= -1;
@@ -32,6 +32,25 @@ static int	get_malloc_size(int n)
 	return (size);
 }
 
+char	*ret_int_min(void)
+{
+	char	*int_min;
+	char	*res;
+	int		i;
+
+	res = malloc(sizeof(char) * 12);
+	if (!res)
+		return (NULL);
+	i = 0;
+	int_min = "-2147483648";
+	while (i < 13)
+	{
+		res[i] = int_min[i];
+		i++;
+	}
+	return (res);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*res;
@@ -39,6 +58,8 @@ char	*ft_itoa(int n)
 	int		size;
 	int		i;
 
+	if (n == -2147483648)
+		return (ret_int_min());
 	size = get_malloc_size(n);
 	res = malloc(sizeof(char) * size + 1);
 	if (!res)
@@ -61,7 +82,7 @@ char	*ft_itoa(int n)
 
 // int	main(void)
 // {
-// 	int n = 2143433;
+// 	int n = -2147483648;
 // 	char *res;
 
 // 	res = ft_itoa(n);

@@ -1,5 +1,7 @@
 NAME = libft.a
 
+HEADER = libft.h
+
 SRC = ft_atoi.c \
     	ft_bzero.c \
         ft_calloc.c \
@@ -25,9 +27,10 @@ SRC = ft_atoi.c \
 		ft_toupper.c \
 		ft_substr.c \
 		ft_substr.c \
+		ft_strjoin.c \
 		ft_strtrim.c \
 		ft_split.c \
-		ft_itoa \
+		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_putchar_fd.c \
@@ -61,10 +64,10 @@ all: $(NAME)
 #	one two
 #	one two
 
-%.o : %.c
-	gcc $(CFLAGS) -c $< -o $@
+%.o : %.c Makefile $(HEADER)
+	cc $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Makefile $(HEADER)
 	ar -rcs $(NAME) $(OBJ)
 
 clean: 
