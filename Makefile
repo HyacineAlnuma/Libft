@@ -23,12 +23,23 @@ SRC = ft_atoi.c \
 		ft_strrchr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_substr.c \
+		ft_substr.c \
+		ft_strtrim.c \
+		ft_split.c \
+		ft_itoa \
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
 
 OBJ = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: libft.a
+all: $(NAME)
 
 #	%.o	= all what ends by ".o" 
 #	$@	= the file name of the target of the rule
