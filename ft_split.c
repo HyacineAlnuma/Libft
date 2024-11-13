@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:56:27 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/11 15:33:43 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/13 11:48:35 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*ft_strndup(const char *src, int size)
 	int		i;
 
 	dest = (char *)malloc((sizeof(char) * size) + 1);
-	if (dest == NULL)
+	if (!dest)
 		return (NULL);
 	i = 0;
 	while (i < size)
@@ -56,31 +56,56 @@ static char	*ft_strndup(const char *src, int size)
 	return (dest);
 }
 
-char	**ft_split(char const *s, char c)
+static void	*destroy_split(char **res, int j)
 {
-	char	**res;
-	int		i;
-	int		j;
-	int		last_sep;
+	int	i;
+
+	i = 0;
+	while (i < j)
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
+	return (NULL);
+}
+
+static void	*set_res(char **res, const char *s, char c)
+{
+	size_t		i;
+	size_t		j;
+	size_t		last_sep;
 
 	i = 0;
 	j = -1;
 	last_sep = 0;
-	res = create_final_array(s, c);
-	if (!res)
-		return (NULL);
-	while (s[i])
+	while (i <= ft_strlen(s))
 	{
-		if (s[i] == c)
+		if (s[i] == c || i == ft_strlen(s))
 		{
 			if ((i - last_sep) > 0)
-				res[++j] = ft_strndup(&s[last_sep], (i - last_sep));
+			{
+				res[++j] = ft_strndup((char *)&s[last_sep], (i - last_sep));
+				if (!res[j])
+					return (destroy_split(res, j));
+			}
 			last_sep = i + 1;
 		}
 		i++;
 	}
-	if ((i - last_sep) > 0)
-		res[++j] = ft_strndup((char *)&s[last_sep], (i - last_sep));
 	res[++j] = NULL;
+	return (res);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+
+	res = create_final_array(s, c);
+	if (!res)
+		return (NULL);
+	res = set_res(res, s, c);
+	if (!res)
+		return (NULL);
 	return (res);
 }

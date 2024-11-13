@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:50:36 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/12 17:58:50 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/13 10:18:44 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*res;
 	t_list	*temp;
+	void	*content;
 
 	res = NULL;
 	while (lst)
 	{
-		temp = ft_lstnew((*f)(lst->content));
+		content = (*f)(lst->content);
+		temp = ft_lstnew(content);
 		if (!temp)
 		{
+			(*del)(content);
 			ft_lstclear(&res, (*del));
 			return (NULL);
 		}

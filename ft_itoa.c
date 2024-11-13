@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:57:23 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/11 17:02:52 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/13 11:04:53 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,3 @@ char	*ft_itoa(int n)
 	res[size] = '\0';
 	return (res);
 }
-
-// int	main(void)
-// {
-// 	int n = -2147483648;
-// 	char *res;
-
-// 	res = ft_itoa(n);
-// 	printf("%s", res);
-// }

@@ -86,8 +86,8 @@ all: $(NAME)
 $(NAME): $(OBJ) Makefile $(HEADER)
 	ar -rcs $(NAME) $(OBJ)
 
-bonus: $(OBJALL) Makefile $(HEADER)
-	ar -rcs $(NAME) $(OBJALL)
+bonus: 
+	@make OBJ="$(OBJALL)"
 
 clean: 
 	rm -rf *.o
