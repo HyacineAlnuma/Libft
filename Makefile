@@ -81,7 +81,7 @@ all: $(NAME)
 #	one two
 
 %.o : %.c Makefile $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I . -c $< -o $@
 
 $(NAME): $(OBJ) Makefile $(HEADER)
 	ar -rcs $(NAME) $(OBJ)
