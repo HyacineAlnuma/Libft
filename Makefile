@@ -92,10 +92,13 @@ bonus:
 clean: 
 	rm -rf *.o
 
-fclean: clean
+fclean:
+	$(MAKE) clean
 	rm -rf libft.a
 
-re: fclean all
+re:
+	$(MAKE) fclean
+	$(MAKE) all
 
 .PHONY: all clean fclean re
 
