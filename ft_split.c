@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:56:27 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/13 11:48:35 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/22 10:01:43 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ static char	**create_final_array(const char *str, char c)
 	last_sep = 0;
 	parts = 0;
 	i = 0;
-	while (str[i])
+	while (i <= ft_strlen(str))
 	{
-		if (str[i] == c || i == (ft_strlen(str) - 1))
+		if (str[i] == c || i == ft_strlen(str))
 		{
-			if (i - last_sep > 1)
+			if ((i - last_sep) > 0)
 				parts++;
-			last_sep = i;
+			last_sep = i + 1;
 		}
 		i++;
 	}
@@ -73,8 +73,8 @@ static void	*destroy_split(char **res, int j)
 static void	*set_res(char **res, const char *s, char c)
 {
 	size_t		i;
-	size_t		j;
 	size_t		last_sep;
+	int			j;
 
 	i = 0;
 	j = -1;
