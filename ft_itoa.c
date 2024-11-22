@@ -6,7 +6,7 @@
 /*   By: halnuma <halnuma@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:57:23 by halnuma           #+#    #+#             */
-/*   Updated: 2024/11/13 11:04:53 by halnuma          ###   ########.fr       */
+/*   Updated: 2024/11/22 13:10:57 by halnuma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,17 @@ char	*ret_int_min(void)
 	char	*res;
 	int		i;
 
-	res = malloc(sizeof(char) * 12);
+	res = (char *)malloc(sizeof(char) * 12);
 	if (!res)
 		return (NULL);
 	i = 0;
 	int_min = "-2147483648";
-	while (i < 13)
+	while (i < 11)
 	{
 		res[i] = int_min[i];
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }
 
